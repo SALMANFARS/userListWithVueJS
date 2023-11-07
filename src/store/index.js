@@ -12,7 +12,7 @@ export default createStore({
         title: "Two",
       },
       {
-        id: 2,
+        id: 3,
         title: "Three",
       },
     ],
@@ -24,12 +24,18 @@ export default createStore({
     addTodo({ commit }, todo) {
       commit('add_todo', todo);
     },
+    deleteTodo({commit }, id) {
+      commit('delete_todo', id);
+    },
   },
   mutations: {
     add_todo(state, todo) {
       state.todos.push(todo);
-      console.log(todo);
+      
     },
+    delete_todo(state, id) {
+      state.todos = state.todos.filter((todo) => todo.id != id);
+    }
   },
 
   modules: {},

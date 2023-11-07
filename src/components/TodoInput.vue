@@ -2,7 +2,7 @@
   <div>
     <h1>Todo List</h1>
     <div class="txtBtn">
-    <input @change="todoTextChange" v-bind:value="todoText" class="col form-control mx-2" type="text" />
+    <input @change="todoTextChange" v-bind:value="todoText" class="col form-control mr-2" type="text" />
     <button  @click="addTodoI" class="btn btn-primary">Add</button>
     </div>
   </div>
