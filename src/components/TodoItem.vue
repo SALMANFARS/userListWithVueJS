@@ -1,42 +1,53 @@
 <template>
   <div>
-    <thead class="">
+    <table class="table caption-top">
+      <thead class="table-dark">
         <tr>
-          <th scope="col">№</th>
-          <th scope="col">Name</th>
-          <th scope="col">Surname</th>
-          <th scope="col">Address</th>
-          <th scope="col">Experience</th>
-          <th scope="col">Age</th>
-          <th scope="col">Edit</th>
+          <th scope="col" style="width: 16.67%;">Name</th>
+          <th scope="col" style="width: 16.67%;">Surname</th>
+          <th scope="col" style="width: 16.67%;">Age</th>
+          <th scope="col" style="width: 16.67%;">Experience</th>
+          <th scope="col" style="width: 16.67%;">Address</th>
+          <th scope="col" style="width: 16.67%;">Edit</th>
         </tr>
       </thead>
-    <div class="cl1 my-3 justify-content-between">
-     
-
-      <template v-if="!editing">
-        <h4>{{ todo.index + 1 }}</h4>
-        <h4>{{ todo.title }}</h4>
-        <h4>{{ todo.title2 }}</h4>
-        <h4>{{ todo.age }}</h4>
-        <h4>{{ todo.experience }}</h4>
-        <h4>{{ todo.adress }}</h4>
-      </template>
-      <template v-else>
-        <input v-bind:value="todoText" @change="todoTextChange" type="text" class="col form-control">  
-        <input v-bind:value="todoText2" @change="todoText2Change" type="text" class="col form-control"> 
-        <input v-bind:value="todoText3" @change="todoText3Change" type="text" class="col form-control"> 
-        <input v-bind:value="todoText4" @change="todoText4Change" type="text" class="col form-control"> 
-        <input v-bind:value="todoText5" @change="todoText5Change" type="text" class="col form-control"> 
-      </template>
-      <div>
-        <button @click="updateTodoI(todo)" class="btn btn-primary mx-2">{{ editing  ? 'Update':'Edit' }}</button>
-        <button @click="deleteTodo(todo.id)" class="btn btn-danger">Delete</button>
-      </div>
-    </div>
+      <tbody class="cl1 my-3">
+        <tr v-if="!editing">
+          <td style="width: 16.67%;">{{ todo.title }}</td>
+          <td style="width: 16.67%;">{{ todo.title2 }}</td>
+          <td style="width: 16.67%;">{{ todo.age }}</td>
+          <td style="width: 16.67%;">{{ todo.experience }}</td>
+          <td style="width: 16.67%;">{{ todo.adress }}</td>
+          <td style="width: 16.67%;">
+            <button @click="updateTodoI(todo)" class="btn btn-primary mx-2">
+              {{ editing ? 'Update' : 'Edit' }}
+            </button>
+            <button @click="deleteTodo(todo.id)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+        <tr v-if="editing">
+          <td colspan="5" style="width: 83.33%;">
+            <div class="input-group">
+              <input v-model="todoText" type="text" class="form-control" placeholder="Name" />
+              <input v-model="todoText2" type="text" class="form-control" placeholder="Surname" />
+              <input v-model="todoText3" type="text" class="form-control" placeholder="Age" />
+              <input v-model="todoText4" type="text" class="form-control" placeholder="Experience" />
+              <input v-model="todoText5" type="text" class="form-control" placeholder="Address" />
+            </div>
+          </td>
+          <td style="width: 16.67%;">
+            <button @click="updateTodoI(todo)" class="btn btn-primary mx-2">
+              Update
+            </button>
+            <button @click="deleteTodo(todo.id)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
+<!-- остальной код остается неизменным -->
 <script>
 import { mapActions } from "vuex";
 
@@ -95,9 +106,10 @@ export default {
 
 <style>
 .cl1 {
-  display: flex;
+  
   margin: 0 10px 0 10px;
 
 }
 
 </style>
+
