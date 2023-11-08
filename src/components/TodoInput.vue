@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>Todo List</h1>
+    <h1>Cписок сотрудников</h1>
     <div class="txtBtn">
-      <button @click="openModal" class="btn btn-primary">
-        Add New Employee
+      <button @click="openModal" class="btn btn-primary my-2">
+        Добавить нововго сотрудника
       </button>
     </div>
 
@@ -18,30 +18,30 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Add New Employee</h5>
+            <h5 class="modal-title"> Данные нового сотрудника</h5>
             <button @click="closeModal" type="button" class="close">
               <span>&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <label for="todoText">Employee Name:</label>
+              <label for="todoText">Имя:</label>
               <input v-model="todoText" class="form-control" type="text" />
             </div>
             <div class="form-group">
-              <label for="todoText2">Employee Position:</label>
+              <label for="todoText2">Фамилия:</label>
               <input v-model="todoText2" class="form-control" type="text" />
             </div>
             <div class="form-group">
-              <label for="todoText3">Employee Age:</label>
+              <label for="todoText3">Возраст:</label>
               <input v-model="todoText3" class="form-control" type="text" />
             </div>
             <div class="form-group">
-              <label for="todoText4">Employee experience:</label>
+              <label for="todoText4">Стаж:</label>
               <input v-model="todoText4" class="form-control" type="text" />
             </div>
             <div class="form-group">
-              <label for="todoText5">Employee Adress:</label>
+              <label for="todoText5"> Адрес:</label>
               <input v-model="todoText5" class="form-control" type="text" />
             </div>
 

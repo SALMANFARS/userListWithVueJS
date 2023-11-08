@@ -3,12 +3,12 @@
     <table class="table caption-top">
       <thead class="table-dark">
         <tr>
-          <th scope="col" style="width: 16.67%;">Name</th>
-          <th scope="col" style="width: 16.67%;">Surname</th>
-          <th scope="col" style="width: 16.67%;">Age</th>
-          <th scope="col" style="width: 16.67%;">Experience</th>
-          <th scope="col" style="width: 16.67%;">Address</th>
-          <th scope="col" style="width: 16.67%;">Edit</th>
+          <th scope="col" style="width: 16.67%;">Имя</th>
+          <th scope="col" style="width: 16.67%;">Фамилия</th>
+          <th scope="col" style="width: 16.67%;">Возраст</th>
+          <th scope="col" style="width: 16.67%;">Стаж</th>
+          <th scope="col" style="width: 16.67%;">Адрес</th>
+          <th scope="col" style="width: 16.67%;">Изменение</th>
         </tr>
       </thead>
       <tbody class="cl1 my-3">
@@ -19,10 +19,10 @@
           <td style="width: 16.67%;">{{ todo.experience }}</td>
           <td style="width: 16.67%;">{{ todo.adress }}</td>
           <td style="width: 16.67%;">
-            <button @click="updateTodoI(todo)" class="btn btn-primary mx-2">
-              {{ editing ? 'Update' : 'Edit' }}
+            <button @click="updateTodoI(todo)" class="btn btn-primary mx-2 my-2">
+              {{ editing ? 'Update' : 'Изменить' }}
             </button>
-            <button @click="deleteTodo(todo.id)" class="btn btn-danger">Delete</button>
+            <button @click="deleteTodo(todo.id)" class="btn btn-danger">Удалить</button>
           </td>
         </tr>
         <tr v-if="editing">
@@ -36,10 +36,10 @@
             </div>
           </td>
           <td style="width: 16.67%;">
-            <button @click="updateTodoI(todo)" class="btn btn-primary mx-2">
-              Update
+            <button @click="updateTodoI(todo)" class="btn btn-primary mx-2 my-2">
+              Обнавить
             </button>
-            <button @click="deleteTodo(todo.id)" class="btn btn-danger">Delete</button>
+            <button @click="deleteTodo(todo.id)" class="btn btn-danger">Удалить</button>
           </td>
         </tr>
       </tbody>
