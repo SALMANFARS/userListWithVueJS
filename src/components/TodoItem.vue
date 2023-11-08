@@ -1,8 +1,21 @@
 <template>
   <div>
+    <thead class="">
+        <tr>
+          <th scope="col">№</th>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Address</th>
+          <th scope="col">Experience</th>
+          <th scope="col">Age</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
     <div class="cl1 my-3 justify-content-between">
+     
+
       <template v-if="!editing">
-        <h4>{{ todo.id }}</h4>
+        <h4>{{ todo.index + 1 }}</h4>
         <h4>{{ todo.title }}</h4>
         <h4>{{ todo.title2 }}</h4>
         <h4>{{ todo.age }}</h4>
