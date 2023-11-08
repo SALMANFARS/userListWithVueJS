@@ -2,12 +2,19 @@
   <div>
     <div class="cl1 my-3 justify-content-between">
       <template v-if="!editing">
+        <h4>{{ todo.id }}</h4>
         <h4>{{ todo.title }}</h4>
         <h4>{{ todo.title2 }}</h4>
+        <h4>{{ todo.age }}</h4>
+        <h4>{{ todo.experience }}</h4>
+        <h4>{{ todo.adress }}</h4>
       </template>
       <template v-else>
         <input v-bind:value="todoText" @change="todoTextChange" type="text" class="col form-control">  
         <input v-bind:value="todoText2" @change="todoText2Change" type="text" class="col form-control"> 
+        <input v-bind:value="todoText3" @change="todoText3Change" type="text" class="col form-control"> 
+        <input v-bind:value="todoText4" @change="todoText4Change" type="text" class="col form-control"> 
+        <input v-bind:value="todoText5" @change="todoText5Change" type="text" class="col form-control"> 
       </template>
       <div>
         <button @click="updateTodoI(todo)" class="btn btn-primary mx-2">{{ editing  ? 'Update':'Edit' }}</button>
@@ -28,6 +35,9 @@ export default {
     return {
       todoText: "",
       todoText2: "",
+      todoText3: "",
+      todoText4: "",
+      todoText5: "",
       editing: false
     };
   },
@@ -39,15 +49,30 @@ export default {
     todoText2Change(e) {
       this.todoText2 = e.target.value;
     },
+     todoText3Change(e) {
+      this.todoText3 = e.target.value;
+    },
+    todoText4Change(e) {
+      this.todoText4 = e.target.value;
+    },
+    todoText5Change(e) {
+      this.todoText5 = e.target.value;
+    },
     updateTodoI(todo) {
       this.editing = !this.editing;
 
       if (this.editing) {
         this.todoText = todo.title;
         this.todoText2 = todo.title2;
+        this.todoText3 = todo.age;
+        this.todoText4 = todo.experience;
+        this.todoText5 = todo.adress;
       } else {
         todo.title = this.todoText;
         todo.title2 = this.todoText2;
+        todo.age = this.todoText3;
+        todo.experience = this.todoText4;
+        todo.adress = this.todoText5;
         this.updateTodo(todo);
       }
     }
@@ -59,5 +84,7 @@ export default {
 .cl1 {
   display: flex;
   margin: 0 10px 0 10px;
+
 }
+
 </style>

@@ -5,14 +5,19 @@ export default createStore({
     todos: [
       {
         id: 1,
-        title: "One",
-        title2: "One2",
+        title: "salman ",
+        title2: "boroni",
+        age: "24",
+        adress: "moskow",
+        experience: "5 year",
       },
       {
         id: 2,
         title: "Two",
         title2: "two2",
-        
+        age: "28",
+        adress: "istnabul",
+        experience: "2 year",
       },
       {
         id: 3,
